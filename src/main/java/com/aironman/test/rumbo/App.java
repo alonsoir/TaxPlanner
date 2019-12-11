@@ -18,7 +18,7 @@ public class App {
 
     public void bootstrapDrools() {
         // The KieSession was injected so we can use it now
-        kSession.insert("Hola Alonso! tu primera regla...");
+        kSession.insert("Hola Alonso! disparando reglas drools...");
         int rulesFired = kSession.fireAllRules();
         System.out.println(">>> Rules Fired: "+rulesFired);
         

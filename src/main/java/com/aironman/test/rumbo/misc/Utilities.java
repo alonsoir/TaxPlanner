@@ -1,4 +1,4 @@
-package com.aironman.test.runmbo.misc;
+package com.aironman.test.rumbo.misc;
 
 import com.aironman.test.rumbo.model.Order;
 import com.aironman.test.rumbo.model.Product;

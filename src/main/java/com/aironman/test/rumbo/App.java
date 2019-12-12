@@ -7,8 +7,8 @@ import org.jboss.weld.environment.se.WeldContainer;
 import org.kie.api.cdi.KSession;
 import org.kie.api.runtime.KieSession;
 
+import com.aironman.test.rumbo.misc.Utilities;
 import com.aironman.test.rumbo.model.Order;
-import com.aironman.test.runmbo.misc.Utilities;
 
 /**
  * Hello Drools world!

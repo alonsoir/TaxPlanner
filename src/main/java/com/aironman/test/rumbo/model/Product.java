@@ -11,6 +11,10 @@ public class Product {
 	private boolean tax_exempt;
 	private double sale_tax;
 	
+	public Product() {
+		
+	}
+	
 	public Product(String description, double prize) {
 		super();
 		this.id=UUID.randomUUID().toString();
@@ -28,12 +32,12 @@ public class Product {
 		return prize;
 	}
 
-	public boolean isImported() {
+	public boolean getisImported() {
 		return imported;
 	}
 
 	
-	public boolean isTax_exempt() {
+	public boolean getisTax_exempt() {
 		return tax_exempt;
 	}
 
@@ -50,7 +54,8 @@ public class Product {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Product [id=").append(id).append(", description=").append(description).append(", prize=")
 				.append(prize).append(", imported=").append(imported).append(", tax_exempt=").append(tax_exempt)
-				.append(", sale_tax=").append(sale_tax).append("]");
+				.append(", sale_tax=").append(sale_tax).append("]")
+				.append("\r\n");
 		return builder.toString();
 	}
 

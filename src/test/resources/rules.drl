@@ -1,5 +1,6 @@
 package com.aironman.test.rumbo;
 
+
 rule "My First Drools Rule"
     when
         $o: Object()

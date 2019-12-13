@@ -31,7 +31,7 @@ public class Order {
 		return totalPrize;
 	}
 	public void setTotalPrize(double totalPrize) {
-		this.totalPrize = totalPrize;
+		this.totalPrize += totalPrize;
 	}
 	public double getTotalTaxes() {
 		return totalTaxes;
@@ -39,11 +39,12 @@ public class Order {
 	public void setTotalTaxes(double totalTaxes) {
 		this.totalTaxes += totalTaxes;
 	}
+	
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Order [id=").append(id).append(", products=").append(products).append(", totalPrize=")
-				.append(totalPrize).append(", totalTaxes=").append(totalTaxes).append("]");
+		builder.append("\r\n").append("Order [id=").append(id).append("\r\n").append(", products=").append(products).append(", totalPrize=")
+				.append(totalPrize).append(", totalTaxes=").append(totalTaxes).append("]").append("\r\n");
 		return builder.toString();
 	}
 	

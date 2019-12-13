@@ -1,8 +1,30 @@
 package com.aironman.test.rumbo;
 
+import com.aironman.test.rumbo.model.Order;
+import com.aironman.test.rumbo.model.Product;
+
+dialect "mvel"
+
 rule "My First Drools Rule"
     when
         $o: Object()
     then
         System.out.println(" >>> Rule Fired for Object: "+$o.toString());
+end
+
+rule "Applying taxes to imported products."
+when
+
+  // Take the order from working memory and get the product list from it
+  $order: Order( $products: products != null )
+
+  // Get only the imported products
+  $product: Product( isImported == true ) from $products
+then
+  $product.setSale_tax($product.getPrize() * (5d/100));  
+  $order.setTotalPrize($product.getSale_tax() + $product.getPrize());
+  $order.setTotalTaxes($product.getSale_tax());
+  System.out.println("order: " + $order.toString());
+  System.out.println("totalPrize: " + $order.getTotalPrize()); 
+  System.out.println("totalTaxes: " + $order.getTotalTaxes());
 end

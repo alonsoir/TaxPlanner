@@ -30,7 +30,7 @@ public class Utilities {
     	 * 1 imported bottle of perfume 47.50
     	 * */
     	Product p1 = new Product("imported food box of chocolate", 10.00d); //exempted and imported
-    	Product p2 = new Product("imported bottle of perfume",14.99); //not exempted imported
+    	Product p2 = new Product("imported bottle of perfume",47.50d); //not exempted imported
     	
     	Order order = new Order();
     	order.addProduct(p1);

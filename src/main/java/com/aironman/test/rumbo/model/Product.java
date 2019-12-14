@@ -2,6 +2,11 @@ package com.aironman.test.rumbo.model;
 
 import java.util.UUID;
 
+/***
+ * 
+ * @author aironman
+ *
+ */
 public class Product {
 
 	private String id;

@@ -11,7 +11,7 @@ import com.aironman.test.rumbo.misc.Utilities;
 import com.aironman.test.rumbo.model.Order;
 
 /**
- * Hello Drools world!
+ * @author aironman
  *
  */
 public class App {
@@ -22,7 +22,7 @@ public class App {
 
     public void bootstrapDrools() {
         // The KieSession was injected so we can use it now
-        kSession.insert("Hola Alonso! disparando reglas drools...");
+        kSession.insert("Hola Alonso! disparando reglas drools. Comprobando que el motor de reglas funciona.");
         Order order1 = Utilities.createOrder1();
         Order order2 = Utilities.createOrder2();
         Order order3 = Utilities.createOrder3();
@@ -31,8 +31,9 @@ public class App {
         kSession.insert(order3);
         int rulesFired = kSession.fireAllRules();
         System.out.println(">>> Rules Fired: "+rulesFired);
-        
-        
+        System.out.println("order1: " + order1.toString());
+        System.out.println("order2: " + order2.toString());
+        System.out.println("order3: " + order3.toString());
     }
 
     public static void main(String[] args) {

@@ -4,15 +4,15 @@
 
 	Proyecto para calcular impuestos a una serie de productos pertenecientes a una orden.
 
-	Los productos van a tener un precio mas un impuesto, dependiendo de si el producto es importado (5%)
-	o no, y si está exento de pagar impuestos o no (10%). 
+	Los productos van a tener un precio mas un impuesto, dependiendo de si el producto es 
+	importado (5%) o no, y si está exento de pagar impuestos o no (10%). 
 
 	Los exentos son productos como libros, comida y medicinas.
 
-	El problema está resuelto usando el framework DROOLS y java8, un sistema de gestión de reglas de negocio, 
-	el cual permite crear las reglas de negocio en forma de fichero .drl, de manera que un equipo de negocio
-	puede crear dicho fichero usando una herramienta o también se puede generar a mano, guardandolo en la 
-	carpeta src/main/resources.
+	El problema está resuelto usando el framework DROOLS y java8, un sistema de gestión de 
+	reglas de negocio, el cual permite crear las reglas de negocio en forma de fichero .drl,
+	de manera que un equipo de negocio puede crear dicho fichero usando una herramienta 
+	o también se puede generar a mano, guardandolo en la carpeta src/main/resources.
 
 # Prerequisitos
 
@@ -136,28 +136,39 @@
 	
 ## Consideraciones
 
-	La decisión de usar este framework es para poder separar claramente la lógica de negocio en forma de fichero con reglas de negocio, de manera que se aplican esas reglas a 
-	los objetos que permanecen en la zona de memoria de acción del framework. Este objeto en la aplicacion se llama kSession y tiene embebido el fichero de reglas.
+	La decisión de usar este framework es para poder separar claramente la lógica de negocio en forma 
+	de fichero con reglas de negocio, de manera que se aplican esas reglas a 
+	los objetos que permanecen en la zona de memoria de acción del framework. 
+	
+	Este objeto en la aplicacion se llama kSession y tiene embebido el fichero de reglas.
+	
 	Además, al usar el framework un motor de inyeccion de dependecias, éste puede ser usado de multiples
-	maneras, pués podremos inyectarlo, por ejemplo, en un objeto controlador síncrono que atienda peticiones restfull, un publicador/subscriptor de algún sistema de mensajería 
+	maneras, pués podremos inyectarlo, por ejemplo, en un objeto controlador síncrono que atienda 
+	peticiones restfull, un publicador/subscriptor de algún sistema de mensajería 
 	asíncrono, etc...
 	   
 ## Para hacer más adelante
 
-	Controlador web REST que acepte peticiones POST con los datos que representen a los productos de una orden y devuelva los datos actualizados de dicha orden.
+	Controlador web REST que acepte peticiones POST con los datos que representen a los productos de 
+	una orden y devuelva los datos actualizados de dicha orden.
 	
 	Publicador kafka que inyecte en un topic los datos de una orden.
 	
-	Consumidor kafka que recoja los datos de la orden, cree el objeto Order con una lista de productos y use el objeto inyectado kSession para insertar en el motor de reglas.
-	De esta manera, podemos distribuir la carga de peticiones, pues podremos tener tantos productores consumidores como necesitemos para poder atender la demanda.
+	Consumidor kafka que recoja los datos de la orden, cree el objeto Order con una lista de productos 
+	y use el objeto inyectado kSession para insertar en el motor de reglas.
+	
+	De esta manera, podemos distribuir la carga de peticiones, pues podremos tener tantos productores 
+	consumidores como necesitemos para poder atender la demanda.
 
-	Una mezcla de las dos variantes, de manera que así podamos dar servicio a tantos clientes web de una manera síncrona y escalable. Lo mejor de ambos mundos.
+	Una mezcla de las dos variantes, de manera que así podamos dar servicio a tantos clientes web de 
+	una manera síncrona y escalable. Lo mejor de ambos mundos.
 	
 	Contenedor Docker para una plataforma PAAS, escalable.
 	
-	Una manera de inyectar un nuevo fichero de reglas una vez que la aplicación está cargada en memoria, de manera que el equipo puede generar un nuevo fichero de reglas que 
-	aplique a los objetos de negocio, evitando al máximo la necesidad de recompilar el proyecto, bajar todos los contenedores Docker, y así minimizar el tiempo en el que el 
-	sistema no está disponible.
+	Una manera de inyectar un nuevo fichero de reglas una vez que la aplicación está cargada en memoria, 
+	de manera que el equipo puede generar un nuevo fichero de reglas que 
+	aplique a los objetos de negocio, evitando al máximo la necesidad de recompilar el proyecto, bajar 
+	todos los contenedores Docker, y así minimizar el tiempo en el que el sistema no está disponible.
 	  
 ## Enlaces interesantes
 

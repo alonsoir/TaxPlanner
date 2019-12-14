@@ -12,19 +12,58 @@ rule "My First Drools Rule"
         System.out.println(" >>> Rule Fired for Object: "+$o.toString());
 end
 
-rule "Applying taxes to imported products."
+rule "Applying taxes to imported (5%) and exempted products (0%)."
 when
 
   // Take the order from working memory and get the product list from it
   $order: Order( $products: products != null )
 
-  // Get only the imported products
-  $product: Product( isImported == true ) from $products
+  // Get only the imported and exempted products
+  $product: Product( isImported == true && isTax_exempt == true) from $products
 then
-  $product.setSale_tax($product.getPrize() * (5d/100));  
+  $product.setSale_tax($product.getPrize() * (5.000d/100));  
   $order.setTotalPrize($product.getSale_tax() + $product.getPrize());
   $order.setTotalTaxes($product.getSale_tax());
-  System.out.println("order: " + $order.toString());
-  System.out.println("totalPrize: " + $order.getTotalPrize()); 
-  System.out.println("totalTaxes: " + $order.getTotalTaxes());
+end
+
+rule "Applying taxes to imported (5%) and NOT exempted products (10%)."
+when
+
+  // Take the order from working memory and get the product list from it
+  $order: Order( $products: products != null )
+
+  // Get only the imported and exempted products
+  $product: Product( isImported == true && isTax_exempt == false) from $products
+then
+  $product.setSale_tax($product.getPrize() * (15.000d/100));  
+  $order.setTotalPrize($product.getSale_tax() + $product.getPrize());
+  $order.setTotalTaxes($product.getSale_tax());
+end
+
+rule "Applying taxes to NOT imported (0%) and exempted products (0%)."
+when
+
+  // Take the order from working memory and get the product list from it
+  $order: Order( $products: products != null )
+
+  // Get only the imported and exempted products
+  $product: Product( isImported == false && isTax_exempt == true) from $products
+then
+  $product.setSale_tax(0.000d);  
+  $order.setTotalPrize($product.getSale_tax() + $product.getPrize());
+  $order.setTotalTaxes($product.getSale_tax());
+end
+
+rule "Applying taxes to NOT imported (0%) and NOT exempted products (10%)."
+when
+
+  // Take the order from working memory and get the product list from it
+  $order: Order( $products: products != null )
+
+  // Get only the imported and exempted products
+  $product: Product( isImported == false && isTax_exempt == false) from $products
+then
+  $product.setSale_tax($product.getPrize() * (10.000d/100));  
+  $order.setTotalPrize($product.getSale_tax() + $product.getPrize());
+  $order.setTotalTaxes($product.getSale_tax());
 end

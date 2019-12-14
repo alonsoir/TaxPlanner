@@ -146,8 +146,15 @@
 	maneras, pués podremos inyectarlo, por ejemplo, en un objeto controlador síncrono que atienda 
 	peticiones restfull, un publicador/subscriptor de algún sistema de mensajería 
 	asíncrono, etc...
+	
+	De esta manera, el código es más limpio, mucho más que hacer desde cero un nuevo motor de reglas o 
+	embeber en el código las reglas, en mi humilde opinión.
 	   
 ## Para hacer más adelante
+
+	Conseguir un redondeo más ajustado.
+
+	Aplicar el patron Factory para crear las ordenes y los productos.
 
 	Controlador web REST que acepte peticiones POST con los datos que representen a los productos de 
 	una orden y devuelva los datos actualizados de dicha orden.
@@ -166,12 +173,14 @@
 	Contenedor Docker para una plataforma PAAS, escalable.
 	
 	Una manera de inyectar un nuevo fichero de reglas una vez que la aplicación está cargada en memoria, 
-	de manera que el equipo puede generar un nuevo fichero de reglas que 
-	aplique a los objetos de negocio, evitando al máximo la necesidad de recompilar el proyecto, bajar 
-	todos los contenedores Docker, y así minimizar el tiempo en el que el sistema no está disponible.
+	de manera que el equipo puede generar un nuevo fichero de reglas que aplique a los objetos de 
+	negocio, evitando al máximo la necesidad de recompilar el proyecto, bajar todos los contenedores 
+	Docker, y así minimizar el tiempo en el que el sistema no está disponible.
 	  
 ## Enlaces interesantes
 
 	https://www.drools.org
 
 	https://es.wikipedia.org/wiki/Drools
+	
+	https://www.arquitecturajava.com/usando-el-patron-factory/

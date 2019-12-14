@@ -2,7 +2,7 @@
 
 ## Introduccion
 
-	Proyecto para calcular impuestos a una serie de productos pertenecientes a una orden.
+	Proyecto para demostrar el calculo de impuestos a una serie de productos pertenecientes a una orden.
 
 	Los productos van a tener un precio mas un impuesto, dependiendo de si el producto es 
 	importado (5%) o no, y si está exento de pagar impuestos o no (10%). 
@@ -14,11 +14,29 @@
 	de manera que un equipo de negocio puede crear dicho fichero usando una herramienta 
 	o también se puede generar a mano, guardandolo en la carpeta src/main/resources.
 
+	Se ha escrito una clase con un test unitario que demuestra la hipótesis de inicio.
+	
+	Ejecutad el test, por favor.
+
 # Prerequisitos
 
 	java8 y maven
+
+	Last login: Sat Dec 14 20:07:37 on ttys002
+	aironman@MacBook-Pro-de-Alonso TaxPlanner % fish
+	Welcome to fish, the friendly interactive shell
+	aironman@MacBook-Pro-de-Alonso ~/e/TaxPlanner> java -version
+	openjdk version "13.0.1" 2019-10-15
+	OpenJDK Runtime Environment (build 13.0.1+9)
+	OpenJDK 64-Bit Server VM (build 13.0.1+9, mixed mode, sharing)
+	aironman@MacBook-Pro-de-Alonso ~/e/TaxPlanner> mvn --version
+	Apache Maven 3.6.2 (40f52333136460af0dc0d7232c0dc0bcf0d9e117; 2019-08-27T17:06:16+02:00)
+	Maven home: /usr/local/Cellar/maven/3.6.2/libexec
+	Java version: 13.0.1, vendor: Oracle Corporation, runtime: /Library/Java/JavaVirtualMachines/openjdk-13.0.1.jdk/Contents/Home
+	Default locale: es_ES, platform encoding: UTF-8
+	OS name: "mac os x", version: "10.15.1", arch: "x86_64", family: "mac"
 	
-## Como se compila
+## Como se compila y ejecuta.
 
 	mvn clean install
 

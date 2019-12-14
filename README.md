@@ -20,7 +20,7 @@
 
 # Prerequisitos
 
-	java8 y maven
+	java8 como mínimo y maven
 
 	Last login: Sat Dec 14 20:07:37 on ttys002
 	aironman@MacBook-Pro-de-Alonso TaxPlanner % fish

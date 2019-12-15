@@ -170,7 +170,7 @@
 	   
 ## Para hacer más adelante
 
-	Conseguir un redondeo más ajustado.
+	Conseguir un redondeo más ajustado. Ver el método estático Utilities.redondearDecimales.
 
 	Aplicar el patron Factory para crear las ordenes y los productos.
 

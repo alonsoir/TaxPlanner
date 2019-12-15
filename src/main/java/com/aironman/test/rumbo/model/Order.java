@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import com.aironman.test.rumbo.misc.Utilities;
+
 /***
  * 
  * @author aironman
@@ -36,13 +38,13 @@ public class Order {
 		return totalPrize;
 	}
 	public void setTotalPrize(double totalPrize) {
-		this.totalPrize += totalPrize;
+		this.totalPrize += Utilities.redondearDecimales(totalPrize,2);
 	}
 	public double getTotalTaxes() {
 		return totalTaxes;
 	}
 	public void setTotalTaxes(double totalTaxes) {
-		this.totalTaxes += totalTaxes;
+		this.totalTaxes += Utilities.redondearDecimales(totalTaxes,2);
 	}
 	
 	@Override

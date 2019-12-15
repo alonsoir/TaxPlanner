@@ -2,6 +2,8 @@ package com.aironman.test.rumbo.model;
 
 import java.util.UUID;
 
+import com.aironman.test.rumbo.misc.Utilities;
+
 /***
  * 
  * @author aironman

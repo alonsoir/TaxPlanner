@@ -16,7 +16,7 @@
 
 	Se ha escrito una clase con un test unitario que demuestra la hipótesis de inicio.
 	
-	Ejecutad el test, por favor.
+	Ejecutad el test, por favor. (mvn test)
 
 # Prerequisitos
 

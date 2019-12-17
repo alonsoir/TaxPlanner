@@ -162,19 +162,25 @@
 			11.25 * 5/100 = 0.5625 de tasa del producto, redondeado, queda en 0.56
 			11.25 + 0.5625 = 11.8125 precio total aplicado impuestos
 			
-	Que redondeado hacia arriba queda en 11.85, como pone en el output propuesto con un tax_sale calculado de 0.56.
-	Ahora, si sumamos, 11.85 + 9.75 + 20.89 + 31.19 da un total de 74.68 y si sumamos 0.56 + 4.2 + 1.9 da 6.66, 
-	que redondeado da 6.70 como pone en el enunciado. 
+	Que redondeado hacia arriba queda en 11.85, como pone en el output propuesto con un tax_sale calculado 
+	de 0.56.
+	
+	Ahora, si sumamos, 11.85 + 9.75 + 20.89 + 31.19 da un total de 74.68 y si sumamos 0.56 + 4.2 + 1.9 
+	da 6.66, que redondeado da 6.70 como pone en el enunciado. 
 		
-	La verdad es que este caso especial me ha dejado confundido y no se si es error a proposito de su parte para que
-	me diera cuenta o es un error mío, porque si aplico la lógica pedida en el enunciado, es decir,
-	"aplicar un sale_tax redondeado a cada producto del 0.05" y mostrar dos decimales en los resultados finales,
-	creo que la lógica aplicada en los objetos java Order y Product es la correcta, y si no lo es, y los números 
-	calculados para este producto en concreto, necesitan comprobar si están entre el valor delta y su valor original, 
-	en cuyo caso, redondeo hacia arriba o hacia abajo. Como no lo tengo claro, lo dejo indicado, con el deseo de dejar 
-	constancia del razonamiento. 
+	La verdad es que este caso especial me ha dejado confundido y no se si es error a proposito de su 
+	parte para que me diera cuenta o es un error mío, porque si aplico la lógica pedida en el enunciado,
+	es decir, "aplicar un sale_tax redondeado a cada producto del 0.05" y mostrar dos decimales en 
+	los resultados finales, creo que la lógica aplicada en los objetos java Order y Product es la 
+	correcta, y si no lo es, y los números calculados para este producto en concreto, necesitan 
+	comprobar si están entre el valor delta y su valor original, en cuyo caso, redondeo hacia arriba 
+	o hacia abajo. 
+	
+	Como no lo tengo claro, lo dejo indicado, con el deseo de dejar constancia del razonamiento. 
 		
-	En la vida real habría que tomar una decisió u otra y no se si estaría autorizado a tomar dicha decisión. 
+	En la vida real habría que tomar una decisió u otra y no se si estaría autorizado a tomar dicha 
+	decisión. 
+	
 	Hablamos del dinero de la compañia y no es cosa baladí.
 	 
 		

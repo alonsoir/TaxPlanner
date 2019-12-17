@@ -13,16 +13,16 @@ public class Product {
 
 	private String id;
 	private String description;
-	private double prize;
+	private float prize;
 	private boolean imported;
 	private boolean tax_exempt;
-	private double sale_tax;
+	private float sale_tax;
 	
 	public Product() {
 		
 	}
 	
-	public Product(String description, double prize) {
+	public Product(String description, float prize) {
 		super();
 		this.id=UUID.randomUUID().toString();
 		this.description = description;
@@ -35,8 +35,13 @@ public class Product {
 		
 	}
 
-	public double getPrize() {
-		return prize;
+	public float getPrize() {
+		return Utilities.roundToDecimals(prize,2);
+	}
+
+	
+	public void setPrize(float prize) {
+		this.prize = Utilities.roundToDecimals(prize,2);
 	}
 
 	public boolean getisImported() {
@@ -48,12 +53,12 @@ public class Product {
 		return tax_exempt;
 	}
 
-	public double getSale_tax() {
-		return sale_tax;
+	public float getSale_tax() {
+		return Utilities.roundToDecimals(sale_tax,2);
 	}
 
-	public void setSale_tax(double sale_tax) {
-		this.sale_tax = sale_tax;
+	public void setSale_tax(float sale_tax) {
+		this.sale_tax = Utilities.roundTo_Zero_Point_Zero_Five_Up_value(sale_tax);
 	}
 
 	@Override
@@ -61,7 +66,8 @@ public class Product {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Product [id=").append(id).append(", description=").append(description).append(", prize=")
 				.append(prize).append(", imported=").append(imported).append(", tax_exempt=").append(tax_exempt)
-				.append(", sale_tax=").append(sale_tax).append("]")
+				.append(", sale_tax=").append(sale_tax)
+				.append("]")
 				.append("\r\n");
 		return builder.toString();
 	}

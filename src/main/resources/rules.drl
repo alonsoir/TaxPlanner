@@ -21,49 +21,50 @@ when
   // Get only the imported and exempted products
   $product: Product( isImported == true && isTax_exempt == true) from $products
 then
-  $product.setSale_tax($product.getPrize() * (5.000d/100));  
-  $order.setTotalPrize($product.getSale_tax() + $product.getPrize());
+  $product.setSale_tax($product.getPrize() * (5.000f/100));  
+  $product.setPrize($product.getSale_tax() + $product.getPrize());
+  $order.setTotalPrize($product.getPrize());
   $order.setTotalTaxes($product.getSale_tax());
 end
 
 rule "Applying taxes to imported (5%) and NOT exempted products (10%)."
 when
 
-  // Take the order from working memory and get the product list from it
   $order: Order( $products: products != null )
 
   // Get only the imported and exempted products
   $product: Product( isImported == true && isTax_exempt == false) from $products
 then
-  $product.setSale_tax($product.getPrize() * (15.000d/100));  
-  $order.setTotalPrize($product.getSale_tax() + $product.getPrize());
+  $product.setSale_tax($product.getPrize() * (15.000f/100));  
+  $product.setPrize($product.getSale_tax() + $product.getPrize());
+  $order.setTotalPrize($product.getPrize());
   $order.setTotalTaxes($product.getSale_tax());
 end
 
 rule "Applying taxes to NOT imported (0%) and exempted products (0%)."
 when
 
-  // Take the order from working memory and get the product list from it
   $order: Order( $products: products != null )
 
   // Get only the imported and exempted products
   $product: Product( isImported == false && isTax_exempt == true) from $products
 then
-  $product.setSale_tax(0.000d);  
-  $order.setTotalPrize($product.getSale_tax() + $product.getPrize());
+  $product.setSale_tax(0.000f);  
+  $product.setPrize($product.getSale_tax() + $product.getPrize());
+  $order.setTotalPrize($product.getPrize());
   $order.setTotalTaxes($product.getSale_tax());
 end
 
 rule "Applying taxes to NOT imported (0%) and NOT exempted products (10%)."
 when
 
-  // Take the order from working memory and get the product list from it
   $order: Order( $products: products != null )
 
   // Get only the imported and exempted products
   $product: Product( isImported == false && isTax_exempt == false) from $products
 then
-  $product.setSale_tax($product.getPrize() * (10.000d/100));  
-  $order.setTotalPrize($product.getSale_tax() + $product.getPrize());
+  $product.setSale_tax($product.getPrize() * (10.000f/100));  
+  $product.setPrize($product.getSale_tax() + $product.getPrize());
+  $order.setTotalPrize($product.getPrize());
   $order.setTotalTaxes($product.getSale_tax());
 end

@@ -31,9 +31,9 @@ public class App {
         kSession.insert(order3);
         int rulesFired = kSession.fireAllRules();
         System.out.println(">>> Rules Fired: "+rulesFired);
-        System.out.println("order1: " + order1.toString());
-        System.out.println("order2: " + order2.toString());
-        System.out.println("order3: " + order3.toString());
+        System.out.println("order1 after fired: " + order1.toString());
+        System.out.println("order2 after fired: " + order2.toString());
+        System.out.println("order3 after fired: " + order3.toString());
     }
 
     public static void main(String[] args) {

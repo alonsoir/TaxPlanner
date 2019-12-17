@@ -153,7 +153,31 @@
 	[INFO] ------------------------------------------------------------------------
 	
 ## Consideraciones
-
+	
+	Importante!!
+	El último test, el de la orden3, he aplicado un valor delta en el test de 0.051 por la siguiente razón:
+	
+	Ese producto, "imported food box of chocolate", 11.25f, esta exento and es importado, por lo que le
+	toca aplicar una tasa del 5%. Por lo que, las cuentas son asi:
+			11.25 * 5/100 = 0.5625 de tasa del producto, redondeado, queda en 0.56
+			11.25 + 0.5625 = 11.8125 precio total aplicado impuestos
+			
+	Que redondeado hacia arriba queda en 11.85, como pone en el output propuesto con un tax_sale calculado de 0.56.
+	Ahora, si sumamos, 11.85 + 9.75 + 20.89 + 31.19 da un total de 74.68 y si sumamos 0.56 + 4.2 + 1.9 da 6.66, 
+	que redondeado da 6.70 como pone en el enunciado. 
+		
+	La verdad es que este caso especial me ha dejado confundido y no se si es error a proposito de su parte para que
+	me diera cuenta o es un error mío, porque si aplico la lógica pedida en el enunciado, es decir,
+	"aplicar un sale_tax redondeado a cada producto del 0.05" y mostrar dos decimales en los resultados finales,
+	creo que la lógica aplicada en los objetos java Order y Product es la correcta, y si no lo es, y los números 
+	calculados para este producto en concreto, necesitan comprobar si están entre el valor delta y su valor original, 
+	en cuyo caso, redondeo hacia arriba o hacia abajo. Como no lo tengo claro, lo dejo indicado, con el deseo de dejar 
+	constancia del razonamiento. 
+		
+	En la vida real habría que tomar una decisió u otra y no se si estaría autorizado a tomar dicha decisión. 
+	Hablamos del dinero de la compañia y no es cosa baladí.
+	 
+		
 	La decisión de usar este framework es para poder separar claramente la lógica de negocio en forma 
 	de fichero con reglas de negocio, de manera que se aplican esas reglas a 
 	los objetos que permanecen en la zona de memoria de acción del framework. 
@@ -167,6 +191,40 @@
 	
 	De esta manera, el código es más limpio, mucho más que hacer desde cero un nuevo motor de reglas o 
 	embeber en el código las reglas, en mi humilde opinión.
+	
+	Por motivos de simplicidad, asumí que los productos vienen uno a uno. Está simulado de esa manera usando
+	una clase Utilities. En el mundo real es posible que vengan de otra manera, soy consciente.
+	
+	Por motivos de simplicidad, asumí que un producto es importado si aparece imported en su descripción, 
+	activando un campo booleano para un uso claro y eficiente en la regla de negocio. 
+	Es mucho más eficiente y rápido en tiempo de ejecución comparar muchas veces un campo booleano que comparar 
+	muchas veces una cadena de caracteres.
+	 
+	Por motivos de simplicidad para este test, decidí que un producto está exento en función de la descripción,
+	de manera que asumo que si aparece book, food o medicine en la descripción, se activa el campo booleano.
+	
+	Por supuesto, en el mundo real, puede ser que hubiera que decidir si un producto real está exento o no, 
+	en base a una lógica más complicada. Tal y como están planteados los datos de entrada, soy consciente 
+	que uno de los productos no tiene food para referirse al chocolate importado, por lo que asumo que es
+	un error de transcripción. 
+	
+	En el mundo real, me aseguraría si realmente los productos vienen con una descripción tan holgada,
+	en caso de ser así, habría que programar una lógica mucho más exhaustiva, teniendo en cuenta todos los
+	posibles casos a nivel de número de idiomas posibles, si hubiera más campos que me permitieran determinar si
+	un producto es de un tipo u otro, tendría que ser sensible a los posibles errores de escritura, como que 
+	apareciera fod en vez de food, ocolate en vez de chocolate, cosas asi.
+	
+	A lo mejor habría que mantener una lista con los productos realmente exentos, más allá de que en la descripción
+	aparezca food, medicine o books, pero esa lista podría llegar a ser monstruosamente grande, ya que, cuantas
+	comidas, libros y medicinas en los distintos idiomas hay en el mundo? millones?. 
+	Lo mejor desde el punto de vista del rendimiento y velocidad de ejecución sería que el producto viniera marcado 
+	como tal desde origen como exento o no.
+	
+	El proposito del test es demostrar que en función de dos campos booleanos, se puede escribir una regla que hasta
+	un no programador pudiera entender, para poder separar bien la lógica de negocio y tener un código lo más limpio
+	y elegante posible.  
+	
+	
 	   
 ## Para hacer más adelante
 

@@ -15,15 +15,15 @@ public class Order {
 	
 	private String id;
 	private List<Product> products;
-	private double totalPrize;
-	private double totalTaxes;
+	private float totalPrize;
+	private float totalTaxes;
 	
 	public Order() {
 		super();
 		this.id=UUID.randomUUID().toString();
 		this.products = new ArrayList<Product>();
-		this.totalPrize = 0d;
-		this.totalTaxes = 0d;
+		this.totalPrize = 0f;
+		this.totalTaxes = 0f;
 		
 	}
 	
@@ -34,17 +34,21 @@ public class Order {
 	public void addProduct(Product p) {
 		this.products.add(p);
 	}
-	public double getTotalPrize() {
-		return totalPrize;
+	
+	public float getTotalPrize() {
+		return Utilities.roundToDecimals(totalPrize,2);
 	}
-	public void setTotalPrize(double totalPrize) {
-		this.totalPrize += Utilities.redondearDecimales(totalPrize,2);
+	
+	public void setTotalPrize(float totalPrize) {
+		this.totalPrize += Utilities.roundToDecimals(totalPrize,2);
 	}
-	public double getTotalTaxes() {
-		return totalTaxes;
+	
+	public float getTotalTaxes() {
+		return Utilities.roundToDecimals(totalTaxes,2);
 	}
-	public void setTotalTaxes(double totalTaxes) {
-		this.totalTaxes += Utilities.redondearDecimales(totalTaxes,2);
+	
+	public void setTotalTaxes(float totalTaxes) {
+		this.totalTaxes += Utilities.roundTo_Zero_Point_Zero_Five_Up_value(totalTaxes);
 	}
 	
 	@Override

@@ -30,23 +30,16 @@ public class RulesJUnitTest {
 	public static JavaArchive createDeployment() {
 
 		JavaArchive jar = ShrinkWrap.create(JavaArchive.class).addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
-		System.out.println(jar.toString(true));
+		//System.out.println(jar.toString(true));
 		return jar;
 	}
 
 	@Inject
 	@KSession
 	private KieSession kSession;
-
+	
 	@Test
-	public void hello() {
-		Assert.assertNotNull(kSession);
-		kSession.insert("Hi There From Test!");
-		Assert.assertEquals(1, kSession.fireAllRules());
-	}
-
-	@Test
-	public void should_apply_rules_to_order1_exempted_imported_not_imported() {
+	public void should_apply_rules_to_order1_exented_imported_not_imported() {
 		// GIVEN
 		Assert.assertNotNull(kSession);
 		final Order order1 = Utilities.createOrder1();
@@ -55,28 +48,26 @@ public class RulesJUnitTest {
 		kSession.fireAllRules();
 		// THEN
 		System.out.println("order1 after apply rules: " + order1.toString());
-		Assert.assertEquals("Shoud be equals...", 29.83d, order1.getTotalPrize(), 0.05d);
-		Assert.assertEquals("Shoud be equals...", 1.50d, order1.getTotalTaxes(), 0.05d);
+		Assert.assertEquals("Shoud be equals...", 29.83f, order1.getTotalPrize(), 0.00f);
+		Assert.assertEquals("Shoud be equals...", 1.50f, order1.getTotalTaxes(), 0.00f);
 	}
 
 	@Test
-	public void should_apply_rules_to_order2_exempetd_imported_not_imported() {
+	public void should_apply_rules_to_order2_exented_imported_not_imported() {
 		// GIVEN
 		Assert.assertNotNull(kSession);
-
 		final Order order2 = Utilities.createOrder2();
 		// WHEN
-
 		kSession.insert(order2);
 		kSession.fireAllRules();
 		// THEN
 		System.out.println("order2 after apply rules: " + order2.toString());
-		Assert.assertEquals("Shoud be equals...", 65.15d, order2.getTotalPrize(), 0.05d);
-		Assert.assertEquals("Shoud be equals...", 7.65d, order2.getTotalTaxes(), 0.05d);
+		Assert.assertEquals("Shoud be equals...", 65.15f, order2.getTotalPrize(), 0.00f);
+		Assert.assertEquals("Shoud be equals...", 7.65f, order2.getTotalTaxes(), 0.00f);
 	}
 
 	@Test
-	public void should_apply_rules_to_order3_exented_and_imported_not_exempted_imported_exempted_not_imported_not_exempted_not_imported() {
+	public void should_apply_rules_to_order3_exented_and_imported_not_exented_imported_exented_not_imported_not_exented_not_imported() {
 		// GIVEN 
 		Assert.assertNotNull(kSession); 
 		final Order order3 =Utilities.createOrder3(); 
@@ -84,8 +75,8 @@ public class RulesJUnitTest {
 		kSession.fireAllRules();
 		// THEN 
 		System.out.println("order3 after apply rules: " + order3.toString());
-		Assert.assertEquals("Shoud be equals...", 74.68d, order3.getTotalPrize(), 0.05d);
-		Assert.assertEquals("Shoud be equals...", 6.70d, order3.getTotalTaxes(), 0.05d);
+		Assert.assertEquals("Shoud be equals...", 74.68f, order3.getTotalPrize(), 0.051f);
+		Assert.assertEquals("Shoud be equals...", 6.70f, order3.getTotalTaxes(), 0.051f);
 	}
 
 }

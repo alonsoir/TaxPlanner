@@ -42,7 +42,7 @@
 
 	Veremos una salida como la siguiente:
 
-	Last login: Sat Dec 14 13:08:53 on ttys000
+	Last login: Tue Dec 17 17:06:07 on ttys000
 	aironman@MacBook-Pro-de-Alonso TaxPlanner % fish
 	Welcome to fish, the friendly interactive shell
 	aironman@MacBook-Pro-de-Alonso ~/e/TaxPlanner> mvn clean install
@@ -52,105 +52,117 @@
 	[INFO] Building TaxPlanner 0.0.1-SNAPSHOT
 	[INFO] --------------------------------[ jar ]---------------------------------
 	[INFO] 
+	[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ TaxPlanner ---
+	[INFO] Deleting /Users/aironman/eclipse-workspace/TaxPlanner/target
+	[INFO] 
 	[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ TaxPlanner ---
 	[INFO] Using 'UTF-8' encoding to copy filtered resources.
 	[INFO] Copying 3 resources
 	[INFO] 
 	[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ TaxPlanner ---
-	[INFO] Nothing to compile - all classes are up to date
+	[INFO] Changes detected - recompiling the module!
+	[INFO] Compiling 4 source files to /Users/aironman/eclipse-workspace/TaxPlanner/target/classes
+	[WARNING] /Users/aironman/eclipse-workspace/TaxPlanner/src/main/java/com/aironman/test/rumbo/misc/Utilities.java: /Users/aironman/eclipse-workspace/TaxPlanner/src/main/java/com/aironman/test/rumbo/misc/Utilities.java uses or overrides a deprecated API.
+	[WARNING] /Users/aironman/eclipse-workspace/TaxPlanner/src/main/java/com/aironman/test/rumbo/misc/Utilities.java: Recompile with -Xlint:deprecation for details.
 	[INFO] 
 	[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ TaxPlanner ---
 	[INFO] Using 'UTF-8' encoding to copy filtered resources.
 	[INFO] Copying 3 resources
 	[INFO] 
 	[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ TaxPlanner ---
-	[INFO] Nothing to compile - all classes are up to date
+	[INFO] Changes detected - recompiling the module!
+	[INFO] Compiling 1 source file to /Users/aironman/eclipse-workspace/TaxPlanner/target/test-classes
 	[INFO] 
 	[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ TaxPlanner ---
 	[INFO] Surefire report directory: /Users/aironman/eclipse-workspace/TaxPlanner/target/surefire-reports
-
+	
 	-------------------------------------------------------
- 	T E S T S
+	 T E S T S
 	-------------------------------------------------------
 	Running com.aironman.test.rumbo.RulesJUnitTest
-	ba17a20f-93f3-442a-9303-d92a456aefd2.jar:
-	/META-INF/
-	/META-INF/beans.xml
-	dic. 14, 2019 8:05:09 P. M. org.jboss.weld.bootstrap.WeldStartup <clinit>
+	dic. 17, 2019 7:06:46 P. M. org.jboss.weld.bootstrap.WeldStartup <clinit>
 	INFO: WELD-000900: 2.3.0 (Final)
 	SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 	SLF4J: Defaulting to no-operation (NOP) logger implementation
 	SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-	dic. 14, 2019 8:05:09 P. M. org.jboss.weld.bootstrap.WeldStartup startContainer
+	dic. 17, 2019 7:06:46 P. M. org.jboss.weld.bootstrap.WeldStartup startContainer
 	INFO: WELD-000101: Transactional services not available. Injection of @Inject UserTransaction not available. Transactional observers will be invoked synchronously.
-	dic. 14, 2019 8:05:10 P. M. org.jboss.weld.interceptor.util.InterceptionTypeRegistry <clinit>
+	dic. 17, 2019 7:06:46 P. M. org.jboss.weld.interceptor.util.InterceptionTypeRegistry <clinit>
 	WARN: WELD-001700: Interceptor annotation class javax.ejb.PostActivate not found, interception based on it is not enabled
-	dic. 14, 2019 8:05:10 P. M. org.jboss.weld.interceptor.util.InterceptionTypeRegistry <clinit>
+	dic. 17, 2019 7:06:46 P. M. org.jboss.weld.interceptor.util.InterceptionTypeRegistry <clinit>
 	WARN: WELD-001700: Interceptor annotation class javax.ejb.PrePassivate not found, interception based on it is not enabled
-	dic. 14, 2019 8:05:10 P. M. org.jboss.weld.bootstrap.WeldStartup startContainer
+	dic. 17, 2019 7:06:46 P. M. org.jboss.weld.bootstrap.WeldStartup startContainer
 	WARN: WELD-000135: Legacy deployment metadata provided by the integrator. Certain functionality will not be available.
 	WARNING: An illegal reflective access operation has occurred
 	WARNING: Illegal reflective access by com.thoughtworks.xstream.core.util.Fields (file:/Users/aironman/.m2/repository/com/thoughtworks/xstream/xstream/1.4.7/xstream-1.4.7.jar) to field java.util.TreeMap.comparator
 	WARNING: Please consider reporting this to the maintainers of com.thoughtworks.xstream.core.util.Fields
 	WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
 	WARNING: All illegal access operations will be denied in a future release
-	dic. 14, 2019 8:05:10 P. M. org.jboss.weld.bootstrap.Validator validateCustomBean
+	dic. 17, 2019 7:06:46 P. M. org.jboss.weld.bootstrap.Validator validateCustomBean
 	WARN: WELD-001473: javax.enterprise.inject.spi.Bean implementation org.drools.compiler.cdi.KieCDIExtension$StatefulKSessionBean@6d868997 declared a normal scope but does not implement javax.enterprise.inject.spi.PassivationCapable. It won't be possible to inject this bean into a bean with a passivating scope (@SessionScoped, @ConversationScoped). This can be fixed by assigning the Bean implementation a unique id by implementing the PassivationCapable interface.
 	 >>> Rule Fired for Object: 
-	Order [id=0bffcfc3-9b2f-4765-9bc9-7cb521e6c313
-	, products=[Product [id=aaa7e492-ccdf-45da-a93b-ae711bd5d633, description=book, prize=12.49, imported=false, tax_exempt=true, sale_tax=0.0]
-	, Product [id=e3abe82c-148a-4a1a-ba98-538d127edbdf, description=Music CD, prize=14.99, imported=false, tax_exempt=false, sale_tax=0.0]
-	, Product [id=27debb81-69b2-4a88-b39a-54fc2f08287b, description=food chocolate bar, prize=0.85, imported=false, tax_exempt=true, sale_tax=0.0]
+	Order [id=1f3d9e42-af3c-47ac-a5fe-c0c5d5e53dbf
+	, products=[Product [id=79c7c6a4-90c2-425b-95eb-9f7e47acee5f, description=book, prize=12.49, imported=false, tax_exempt=true, sale_tax=0.0]
+	, Product [id=fffc6f1f-58cd-4817-a395-f2f04f040bb9, description=Music CD, prize=14.99, imported=false, tax_exempt=false, sale_tax=0.0]
+	, Product [id=f8921ece-c9ab-4703-8e23-ad82a1892ba4, description=food chocolate bar, prize=0.85, imported=false, tax_exempt=true, sale_tax=0.0]
 	], totalPrize=0.0, totalTaxes=0.0]
 	
 	order1 after apply rules: 
-	Order [id=0bffcfc3-9b2f-4765-9bc9-7cb521e6c313
-	, products=[Product [id=aaa7e492-ccdf-45da-a93b-ae711bd5d633, description=book, prize=12.49, imported=false, tax_exempt=true, sale_tax=0.0]
-	, Product [id=e3abe82c-148a-4a1a-ba98-538d127edbdf, description=Music CD, prize=14.99, imported=false, tax_exempt=false, sale_tax=1.499]
-	, Product [id=27debb81-69b2-4a88-b39a-54fc2f08287b, description=food chocolate bar, prize=0.85, imported=false, tax_exempt=true, sale_tax=0.0]
-	], totalPrize=29.829, totalTaxes=1.499]
+	Order [id=1f3d9e42-af3c-47ac-a5fe-c0c5d5e53dbf
+	, products=[Product [id=79c7c6a4-90c2-425b-95eb-9f7e47acee5f, description=book, prize=12.49, imported=false, tax_exempt=true, sale_tax=0.0]
+	, Product [id=fffc6f1f-58cd-4817-a395-f2f04f040bb9, description=Music CD, prize=16.49, imported=false, tax_exempt=false, sale_tax=1.5]
+	, Product [id=f8921ece-c9ab-4703-8e23-ad82a1892ba4, description=food chocolate bar, prize=0.85, imported=false, tax_exempt=true, sale_tax=0.0]
+	], totalPrize=29.83, totalTaxes=1.5]
 	
 	 >>> Rule Fired for Object: 
-	Order [id=028af9eb-72f9-4fc9-9bfd-38c2e80ed6c0
-	, products=[Product [id=20870c9b-f0ce-455c-9f4b-2bfcdf6be1a8, description=imported food box of chocolate, prize=11.25, imported=true, tax_exempt=true, sale_tax=0.0]
-	, Product [id=a8a3c21b-6cad-463b-8963-29f53efc57de, description=imported bottle of perfume, prize=27.99, imported=true, tax_exempt=false, sale_tax=0.0]
-	, Product [id=d5687ed3-d17e-4d4a-9aac-ae71539a399a, description=packet headache pills, medical, prize=9.75, imported=false, tax_exempt=true, sale_tax=0.0]
-	, Product [id=e97d8a0c-bd49-4a9a-8ae9-38497246d0bf, description=bottle of perfume, prize=18.99, imported=false, tax_exempt=false, sale_tax=0.0]
+	Order [id=7618908c-b0fc-4b6f-85cc-9e643d1fcac2
+	, products=[Product [id=a79cad0f-4f91-4279-901e-a2bfd3579cf3, description=imported food box of chocolate, prize=11.25, imported=true, tax_exempt=true, sale_tax=0.0]
+	, Product [id=abbc1820-3458-4789-8a24-11de39bb18e4, description=imported bottle of perfume, prize=27.99, imported=true, tax_exempt=false, sale_tax=0.0]
+	, Product [id=0d50a227-9cd1-4f54-813b-66f6df7fe982, description=packet headache pills, medical, prize=9.75, imported=false, tax_exempt=true, sale_tax=0.0]
+	, Product [id=c9a527d7-f006-4bb0-a9d3-360168c6a03d, description=bottle of perfume, prize=18.99, imported=false, tax_exempt=false, sale_tax=0.0]
 	], totalPrize=0.0, totalTaxes=0.0]
 	
 	order3 after apply rules: 
-	Order [id=028af9eb-72f9-4fc9-9bfd-38c2e80ed6c0
-	, products=[Product [id=20870c9b-f0ce-455c-9f4b-2bfcdf6be1a8, description=imported food box of chocolate, prize=11.25, imported=true, tax_exempt=true, sale_tax=0.5625]
-	, Product [id=a8a3c21b-6cad-463b-8963-29f53efc57de, description=imported bottle of perfume, prize=27.99, imported=true, tax_exempt=false, sale_tax=4.198499999999999]
-	, Product [id=d5687ed3-d17e-4d4a-9aac-ae71539a399a, description=packet headache pills, medical, prize=9.75, imported=false, tax_exempt=true, sale_tax=0.0]
-	, Product [id=e97d8a0c-bd49-4a9a-8ae9-38497246d0bf, description=bottle of perfume, prize=18.99, imported=false, tax_exempt=false, sale_tax=1.899]
-	], totalPrize=74.64, totalTaxes=6.659999999999999]
+	Order [id=7618908c-b0fc-4b6f-85cc-9e643d1fcac2
+	, products=[Product [id=a79cad0f-4f91-4279-901e-a2bfd3579cf3, description=imported food box of chocolate, prize=11.8, imported=true, tax_exempt=true, sale_tax=0.55]
+	, Product [id=abbc1820-3458-4789-8a24-11de39bb18e4, description=imported bottle of perfume, prize=32.19, imported=true, tax_exempt=false, sale_tax=4.2]
+	, Product [id=0d50a227-9cd1-4f54-813b-66f6df7fe982, description=packet headache pills, medical, prize=9.75, imported=false, tax_exempt=true, sale_tax=0.0]
+	, Product [id=c9a527d7-f006-4bb0-a9d3-360168c6a03d, description=bottle of perfume, prize=20.89, imported=false, tax_exempt=false, sale_tax=1.9]
+	], totalPrize=74.63, totalTaxes=6.65]
 	
-	 >>> Rule Fired for Object: Hi There From Test!
 	 >>> Rule Fired for Object: 
-	Order [id=a7cb12c6-0cea-4735-aca3-939ac8b9a189
-	, products=[Product [id=99363c89-5122-4c22-acc2-1fdb42e38397, description=imported food box of chocolate, prize=10.0, imported=true, tax_exempt=true, sale_tax=0.0]
-	, Product [id=58c87774-d912-42df-9324-261d0ad02680, description=imported bottle of perfume, prize=47.5, imported=true, tax_exempt=false, sale_tax=0.0]
+	Order [id=77bfd125-b528-42e6-af64-fa9e47ef8c9b
+	, products=[Product [id=2df72319-4a3f-4e8f-bf16-36b1cd6a089b, description=imported food box of chocolate, prize=10.0, imported=true, tax_exempt=true, sale_tax=0.0]
+	, Product [id=7b1d12b6-4c1a-495f-9320-f5644a5f69aa, description=imported bottle of perfume, prize=47.5, imported=true, tax_exempt=false, sale_tax=0.0]
 	], totalPrize=0.0, totalTaxes=0.0]
 	
 	order2 after apply rules: 
-	Order [id=a7cb12c6-0cea-4735-aca3-939ac8b9a189
-	, products=[Product [id=99363c89-5122-4c22-acc2-1fdb42e38397, description=imported food box of chocolate, prize=10.0, imported=true, tax_exempt=true, sale_tax=0.5]
-	, Product [id=58c87774-d912-42df-9324-261d0ad02680, description=imported bottle of perfume, prize=47.5, imported=true, tax_exempt=false, sale_tax=7.125]
-	], totalPrize=65.125, totalTaxes=7.625]
+	Order [id=77bfd125-b528-42e6-af64-fa9e47ef8c9b
+	, products=[Product [id=2df72319-4a3f-4e8f-bf16-36b1cd6a089b, description=imported food box of chocolate, prize=10.5, imported=true, tax_exempt=true, sale_tax=0.5]
+	, Product [id=7b1d12b6-4c1a-495f-9320-f5644a5f69aa, description=imported bottle of perfume, prize=54.65, imported=true, tax_exempt=false, sale_tax=7.15]
+	], totalPrize=65.15, totalTaxes=7.65]
 	
-	Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.473 sec
+	Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.473 sec
 	
 	Results :
 	
-	Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
+	Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
 	
+	[INFO] 
+	[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ TaxPlanner ---
+	[INFO] Building jar: /Users/aironman/eclipse-workspace/TaxPlanner/target/TaxPlanner-0.0.1-SNAPSHOT.jar
+	[INFO] 
+	[INFO] --- maven-install-plugin:2.4:install (default-install) @ TaxPlanner ---
+	[INFO] Installing /Users/aironman/eclipse-workspace/TaxPlanner/target/TaxPlanner-0.0.1-SNAPSHOT.jar to /Users/aironman/.m2/repository/com/aironman/test/rumbo/TaxPlanner/0.0.1-SNAPSHOT/TaxPlanner-0.0.1-SNAPSHOT.jar
+	[INFO] Installing /Users/aironman/eclipse-workspace/TaxPlanner/pom.xml to /Users/aironman/.m2/repository/com/aironman/test/rumbo/TaxPlanner/0.0.1-SNAPSHOT/TaxPlanner-0.0.1-SNAPSHOT.pom
 	[INFO] ------------------------------------------------------------------------
 	[INFO] BUILD SUCCESS
 	[INFO] ------------------------------------------------------------------------
-	[INFO] Total time:  2.485 s
-	[INFO] Finished at: 2019-12-14T20:05:11+01:00
+	[INFO] Total time:  3.584 s
+	[INFO] Finished at: 2019-12-17T19:06:47+01:00
 	[INFO] ------------------------------------------------------------------------
+	aironman@MacBook-Pro-de-Alonso ~/e/TaxPlanner> 
+
 	
 ## Consideraciones
 	

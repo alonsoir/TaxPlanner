@@ -198,43 +198,51 @@
 	De esta manera, el código es más limpio, mucho más que hacer desde cero un nuevo motor de reglas o 
 	embeber en el código las reglas, en mi humilde opinión.
 	
-	Por motivos de simplicidad, asumí que los productos vienen uno a uno. Está simulado de esa manera usando
-	una clase Utilities. En el mundo real es posible que vengan de otra manera, soy consciente.
+	Por motivos de simplicidad, asumí que los productos vienen uno a uno. 
+	Está simulado de esa manera usando una clase Utilities. 
+	
+	En el mundo real es posible que vengan de otra manera, soy consciente.
 	
 	Por motivos de simplicidad, asumí que un producto es importado si aparece imported en su descripción, 
 	activando un campo booleano para un uso claro y eficiente en la regla de negocio. 
-	Es mucho más eficiente y rápido en tiempo de ejecución comparar muchas veces un campo booleano que comparar 
-	muchas veces una cadena de caracteres.
+	Es mucho más eficiente y rápido en tiempo de ejecución comparar muchas veces un campo booleano que 
+	comparar muchas veces una cadena de caracteres.
 	 
-	Por motivos de simplicidad para este test, decidí que un producto está exento en función de la descripción,
-	de manera que asumo que si aparece book, food o medicine en la descripción, se activa el campo booleano.
+	Por motivos de simplicidad para este test, decidí que un producto está exento en función de la 
+	descripción, de manera que asumo que si aparece book, food o medicine en la descripción, 
+	se activa el campo booleano.
 	
-	Por supuesto, en el mundo real, puede ser que hubiera que decidir si un producto real está exento o no, 
-	en base a una lógica más complicada. Tal y como están planteados los datos de entrada, soy consciente 
-	que uno de los productos no tiene food para referirse al chocolate importado, por lo que asumo que es
-	un error de transcripción. 
+	Por supuesto, en el mundo real, puede ser que hubiera que decidir si un producto real está exento 
+	o no, en base a una lógica más complicada. 
+	Tal y como están planteados los datos de entrada, soy consciente que uno de los productos no tiene
+	la palabra "food" para referirse al chocolate importado, por lo que asumo que es
+	un error de transcripción. En el mundo real, preguntaría. 
 	
 	En el mundo real, me aseguraría si realmente los productos vienen con una descripción tan holgada,
 	en caso de ser así, habría que programar una lógica mucho más exhaustiva, teniendo en cuenta todos los
-	posibles casos a nivel de número de idiomas posibles, si hubiera más campos que me permitieran determinar si
-	un producto es de un tipo u otro, tendría que ser sensible a los posibles errores de escritura, como que 
-	apareciera fod en vez de food, ocolate en vez de chocolate, cosas asi.
+	posibles casos a nivel de número de idiomas posibles, si hubiera más campos que me permitieran 
+	determinar si un producto es de un tipo u otro, tendría que ser sensible a los posibles 
+	errores de escritura, como que apareciera fod en vez de food, ocolate en vez de chocolate
+	,cosas asi.
 	
-	A lo mejor habría que mantener una lista con los productos realmente exentos, más allá de que en la descripción
-	aparezca food, medicine o books, pero esa lista podría llegar a ser monstruosamente grande, ya que, cuantas
-	comidas, libros y medicinas en los distintos idiomas hay en el mundo? millones?. 
-	Lo mejor desde el punto de vista del rendimiento y velocidad de ejecución sería que el producto viniera marcado 
-	como tal desde origen como exento o no.
+	A lo mejor habría que mantener una lista con los productos realmente exentos, más allá de que en la 
+	descripción aparezca food, medicine o books, pero esa lista podría llegar a ser monstruosamente grande, 
+	ya que, cuantas comidas, libros y medicinas en los distintos idiomas hay en el mundo? millones?.
+	 
+	Lo mejor desde el punto de vista del rendimiento y velocidad de ejecución sería que el producto 
+	viniera marcado como tal desde origen como exento o no.
 	
-	El proposito del test es demostrar que en función de dos campos booleanos, se puede escribir una regla que hasta
-	un no programador pudiera entender, para poder separar bien la lógica de negocio y tener un código lo más limpio
-	y elegante posible.  
+	El proposito del test es demostrar que en función de dos campos booleanos, se puede escribir 
+	una regla que hasta alguien no técnico pudiera entender, para poder separar bien la lógica de negocio
+	y tener un código lo más limpio y elegante posible.  
 	
 	
 	   
 ## Para hacer más adelante
 
-	Conseguir un redondeo más ajustado. Ver el método estático Utilities.redondearDecimales.
+	Conseguir un redondeo más ajustado. Ver el método estático Utilities.redondearDecimales 
+	y Utilities.roundTo_Zero_Point_Zero_Five_Up_value. Considero que eran necesarios, 
+	por lo que los implemento ahora.
 
 	Aplicar el patron Factory para crear las ordenes y los productos.
 

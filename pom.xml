@@ -12,7 +12,7 @@
 		<kie.version>6.3.0.Final</kie.version>
 		<junit.version>4.11</junit.version>
 		<cdi.version>1.2</cdi.version>
-		<weld.version>2.3.0.Final</weld.version>
+		<weld.version>2.4.8.Final</weld.version>
 		<arquillian-weld-se-embedded-1.1.version>1.0.0.CR9</arquillian-weld-se-embedded-1.1.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
